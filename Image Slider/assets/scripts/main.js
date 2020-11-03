@@ -5,12 +5,13 @@
 1. DO the on hover.[DONE]
 2. Figure out how to make next image Index dependent on the showing image index.[DONE]
 3. Finish The previous button function.[DONE]
-4. FINALLY, DO the table of contents.
+4. FINALLY, DO the table of contents.[DONE]
 
 */
 
 // Selectors 
 let images = document.getElementsByClassName("slider-imgs");
+let tocImages = document.getElementsByClassName("toc-imgs");
 let showingImageIndex = 0;
 let nextImageIndex = 1;
 let beforeImageIndex = showingImageIndex - 1;
@@ -22,7 +23,9 @@ const prev = document.querySelector("fa-arrow-circle-left");
 showImages();
 onClick();
 onHover();
+toc();
 
+console.log(tocImages);
 
 // Function to show the images in a sequence 
 
@@ -137,4 +140,19 @@ function onHover() {
         setTimeout(showImages, showTime);
     }); 
 
+}
+
+function toc() {
+    tocImages[0].addEventListener("click", function(){
+      images[0].style.display = "block";
+    });
+    tocImages[1].addEventListener("click", function(){
+      images[1].style.display = "block";
+    });
+    tocImages[2].addEventListener("click", function(){
+      images[2].style.display = "block";
+    });
+    tocImages[3].addEventListener("click", function(){
+      images[3].style.display = "block";
+    });
 }

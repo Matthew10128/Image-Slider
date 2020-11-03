@@ -28,6 +28,11 @@ span {
 .fas {
   position: absolute;
   top: 40%;
+  cursor: pointer;
+}
+
+.fas:hover {
+  opacity: 0.6;
 }
 
 .fa-arrow-circle-right {
@@ -40,12 +45,14 @@ span {
 
 .middle {
   position: absolute;
-  top: 90%;
+  top: 93%;
   left: 25%;
   right: 75%;
   width: 50%;
   height: 500px;
   margin: 0 auto;
+  text-decoration: underline;
+  font-size: 21px;
 }
 
 .toc {
@@ -53,12 +60,21 @@ span {
   width: 100%;
   height: 100px;
   display: flex;
+  background-color: rgb(29, 29, 29);
 }
 
 .toc-imgs {
+  cursor: pointer;
+  margin-left: 25px;
+  margin-top: 12px;
+  margin-bottom: 25px;
   height: 75%;
   width: 75%;
   position: relative;
   z-index: 1;
   display: block;
+}
+
+.toc-imgs:hover {
+  opacity: 0.6;
 }

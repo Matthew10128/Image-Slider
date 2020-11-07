@@ -5,7 +5,9 @@
 1. DO the on hover.[DONE]
 2. Figure out how to make next image Index dependent on the showing image index.[DONE]
 3. Finish The previous button function.[DONE]
-4. FINALLY, DO the table of contents.[DONE]
+4. DO the table of contents.[DONE]
+5. DO the smooth transition[Not DONE]
+6. Fix ALL the bugs[Not DONE - one or two left]
 
 */
 
@@ -15,7 +17,7 @@ let tocImages = document.getElementsByClassName("toc-imgs");
 let showingImageIndex = 0;
 let nextImageIndex = 1;
 let beforeImageIndex = showingImageIndex - 1;
-let showTime = 2000;
+let showTime = 8000;
 let timeout;
 const buttons = document.querySelectorAll("i");
 const prev = document.querySelector("fa-arrow-circle-left"); 
@@ -24,8 +26,6 @@ showImages();
 onClick();
 onHover();
 toc();
-
-console.log(tocImages);
 
 // Function to show the images in a sequence 
 
@@ -62,36 +62,33 @@ function showImages() {
 // Function to switch between image on click
 
 function onClick() {
-    for(i = 0; i < images.length; i++){
-     images[i].style.display = "none";
-    }
 
-    if(showingImageIndex = 0){
+    if(showingImageIndex === 0){
         nextImageIndex = 1;
     }
 
-    if(showingImageIndex = 1){
+    if(showingImageIndex === 1){
         nextImageIndex = 2;
     }
 
-    if(showingImageIndex = 2){
+    if(showingImageIndex === 2){
         nextImageIndex = 3;
     }
 
-    if(showingImageIndex = 3){
+    if(showingImageIndex === 3){
         nextImageIndex = 0;
     }
 
-    if (showingImageIndex = 0){
+    if (showingImageIndex === 0){
         beforeImageIndex = 3;
     }
-    if (showingImageIndex = 1){
+    if (showingImageIndex === 1){
         beforeImageIndex = 0;
     }
-    if (showingImageIndex = 2){
+    if (showingImageIndex === 2){
         beforeImageIndex = 1;
     }
-    if (showingImageIndex = 3){
+    if (showingImageIndex === 3){
         beforeImageIndex = 2;
     }
 

@@ -79,19 +79,6 @@ function onClick() {
         nextImageIndex = 0;
     }
 
-    if (showingImageIndex === 0){
-        beforeImageIndex = 3;
-    }
-    if (showingImageIndex === 1){
-        beforeImageIndex = 0;
-    }
-    if (showingImageIndex === 2){
-        beforeImageIndex = 1;
-    }
-    if (showingImageIndex === 3){
-        beforeImageIndex = 2;
-    }
-
 
     buttons[
         addEventListener("click", function () {
@@ -100,13 +87,29 @@ function onClick() {
           nextImageIndex++;
     
           prev.addEventListener("click", function() {
+            images[showingImageIndex - 1].style.display = "none";
             images[beforeImageIndex].style.display = "block";
-            beforeImageIndex--;
+            beforeImageIndex--; 
+
+            if (showingImageIndex === 0){
+                beforeImageIndex = 3;
+            }
+            if (showingImageIndex === 1){
+                beforeImageIndex = 0;
+            }
+            if (showingImageIndex === 2){
+                beforeImageIndex = 1;
+            }
+            if (showingImageIndex === 3){
+                beforeImageIndex = 2;
+            }
           });
         })
       ];
 }
 
+
+// Function to stop the movement of the images on hover
 
 function onHover() {
   
@@ -138,6 +141,8 @@ function onHover() {
     }); 
 
 }
+
+// Function for the table of contents, where you click on an image and that exact image shows in the slider
 
 function toc() {
     tocImages[0].addEventListener("click", function(){
